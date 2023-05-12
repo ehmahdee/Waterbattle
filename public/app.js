@@ -92,6 +92,59 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Player ${num} has connected/disconnected`)
             playerConnectedOrDisconnected(num)
         })
+
+        socket.on('enemy-ready', num => {
+            enemyReady = true
+            playerReady(num)
+            if (ready) {
+                playGameMulti(socket)
+                setupButtons.style.display = 'none'
+            }
+        })
+
+        socket.on('check-players', players => {
+            players.forEach((p, i) => {
+                if(p.connected) playerConnectedOrDisconnected(i)
+                if (players.ready) {
+                    playerReady(i)
+                    if(i !== playerReady) enemyReady = true
+                }
+            })
+        })
+
+        socket.on('timeout', () => {
+            infoDisplay.innerHTML = 'You have timed out.'
+        })
+
+        startButton.addEventListener('click', () => {
+            if(allShipsPlaced) playGameMulti(socket)
+            else infoDisplay.innerHTML = "Please place all your ships."
+        })
+
+        computerSquares.forEach(square => {
+            square.addEventListener('click', () => {
+                if(currentPlayer === 'user' && ready && enemyReady) {
+                    shotFired = square.dataset.id
+                    socket.emit('fire', shotFired)
+                }
+            })
+        })
+
+        socket.on('fire', id => {
+            enemyGo(id)
+            const square = userSquares[id]
+            socket.emit('fire-reply', square.classList)
+            playGameMulti(socket)
+        })
+
+        function playerConnectedOrDisconnected(num) {
+            let player = `.p${parseInt(num) + 1}`
+            document.querySelector(`${player} .connected`).classList.toggle('active')
+            if(parseInt(num) === playerNum) document.querySelector(player).style.fontWeight = 'bold'
+        }
+    }
+
+    function startSinglePlayer() {
         
     }
 })
