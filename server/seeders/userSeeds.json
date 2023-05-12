@@ -1,0 +1,38 @@
+[
+    {
+      "username": "RM",
+      "email": "kim@namjoon.com",
+      "password": "password01"
+    },
+    {
+      "username": "Jin",
+      "email": "seokjin@RJ.com",
+      "password": "password02"
+    },
+    {
+      "username": "Suga",
+      "email": "min@yoongi.com",
+      "password": "password03"
+    },
+    {
+      "username": "J-Hope",
+      "email": "Jeon@Hoseok.com",
+      "password": "password04"
+    },
+    {
+      "username": "Jimin",
+      "email": "Park@Jimin.com",
+      "password": "password05"
+    },
+    {
+      "username": "V",
+      "email": "Kim@Taehyung.com",
+      "password": "password06"
+    },
+    {
+      "username": "JK",
+      "email": "Jung@Jungkook.com",
+      "password": "password07"
+    }
+  ]
+  
