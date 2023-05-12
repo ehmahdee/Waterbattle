@@ -1,0 +1,32 @@
+:root {
+    --marlin-purp: #624A64;
+    --marlin-eye: #468CC7;
+    --marlin-navy: #27283D;
+    --marlin-highlight: #A6BCD1;
+    --marlin-teal: #839EA0;
+    
+    --humu-yellow: #DCC26F;
+    --humu-red: #83031E;
+    --humu-white: #ECEBF4;
+    --humu-green: #45BA7C;
+
+    --parrot-pink: #D55F91;
+    --parrot-blue: #158DB8;
+    --parrot-fuscia: #C8459F;
+    --parrot-green: #95BB82;
+}
+
+@keyframes color-rotate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.logo:hover {
+    animation: color-rotate 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
