@@ -22,7 +22,7 @@ const userSchema = new Schema({
     matchHistory: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Thought',
+            ref: 'matchHistory',
         },
     ],
 });
