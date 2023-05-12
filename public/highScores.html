@@ -10,6 +10,63 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Nunito:wght@300&display=swap" rel="stylesheet">
     <script src=""></script>
+    <style>
+        body {
+            font-family: 'Nunito', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        
+        .navbar-nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            display: inline-block;
+            margin-right: 10px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td {
+            padding: 8px;
+            text-align: center;
+            color: white;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bolder;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -21,9 +78,9 @@
     <header>
         <h1>Water Battle High Scores</h1>
     </header>
-
     <div id="high-scores">
         <table>
+            <!-- hardcoded scores and users for placeholding -->
             <tr>
                 <th>Rank</th>
                 <th>Name</th>
@@ -31,27 +88,20 @@
             </tr>
             <tr>
                 <td>1</td>
-                <td>Namjoon Kim</td>
+                <td>Kim Seokjin</td>
                 <td>5000</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Seokjin Kim</td>
+                <td>J-Hope</td>
                 <td>4500</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>Yoongi Min</td>
+                <td>Suga / AgustD</td>
                 <td>4000</td>
             </tr>
             <!-- Add more rows for additional high scores -->
         </table>
     </div>
-
-
-
-
-
-    <footer></footer>
-</body>
-</html>
+    <footer>
