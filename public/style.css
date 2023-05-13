@@ -14,12 +14,19 @@
     --parrot-blue: #158DB8;
     --parrot-fuscia: #C8459F;
     --parrot-green: #95BB82;
+
+    --vape-blue: #207193;
+    --vape-light: #83CDE3;
+    --vape-purp: #4D3370;
+    --vape-yellow: #EFEDC9;
+    --vape-highlight: #A9DCEC;
+    --vape-shadow: #215C77;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background: var(--marlin-navy);
+    background: var(--vape-shadow);
 }
 
 ul {
@@ -37,7 +44,7 @@ a{
 .navbar {
     height: 70px;
     width: 100%;
-    background: linear-gradient(to right, var(--marlin-highlight), var(--marlin-navy));
+    background: linear-gradient(to right, var(--vape-light), var(--vape-blue));
     color: white;
 }
 
@@ -54,7 +61,7 @@ a{
 
 header {
     padding: 1em;
-    background: linear-gradient(to right, var(--marlin-highlight), var(--marlin-navy));
+    background: linear-gradient(to right, var(--vape-light), var(--vape-blue));
     margin-bottom: 1em;
     text-align: center;
     clip-path: polygon(50% 0%, 100% 0, 100% 65%, 50% 100%, 0 65%, 0 0);
