@@ -122,7 +122,7 @@ button {
   
   .btn {
     font-size: inherit;
-    background-color: hsl(30, 100%, 50%);
+    background-color: var(--parrot-blue);
     padding: 0.5em 1em;
     outline: none;
     border: none;
@@ -158,6 +158,10 @@ button {
     background-color: hsl(200, 100%, 50%);
     grid-template-rows: repeat(10, 4.6vmin);
     grid-template-columns: repeat(10, 4.6vmin);
+  }
+
+  .battleship-grid div {
+    border: 1px solid hsla(0, 0%, 100%, .2);
   }
   
   .grid-computer > .taken,
