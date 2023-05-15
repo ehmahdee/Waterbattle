@@ -304,27 +304,21 @@ body {
   text-decoration: none;
 }
 
-/* MAKE THIS MEDIA QUERY WORK
+/* MEDIA QUERIES */
 @media screen and (max-width: 992px) {
   * {
     background-color: #220758;
-  }
-  h2 {
-    font-size: large;
-  }
+    }
 }
 
 @media screen and (max-width: 768px) {
   * {
     background-color: #220758;
-  }
-  h2 {
-    font-size: medium;
-  }
+    }
 }
 
 @media screen and (max-width: 576px) {
   * {
     background-color: #220758;
-  }
-} */
+    }
+} 

@@ -410,3 +410,28 @@ button {
     animation-direction: alternate;
 }
 
+/* MEDIA QUERIES  - need to make it work with all elements within the body */
+@media screen and (max-width: 992px) {
+  * {
+    background-color: #220758;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    background-color: skyblue;
+    }
+    /* body {
+    width: 768px;
+
+    } */
+}
+
+@media screen and (max-width: 576px) {
+  * {
+    background-color: var(--humu-white);
+    }
+    /* body {
+     width: 576px; 
+    } */
+} 
