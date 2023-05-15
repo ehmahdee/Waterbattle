@@ -41,6 +41,11 @@ a{
     text-decoration: none;
 }
 
+li a{
+    text-decoration: none;
+    color: var(--humu-white);
+}
+
 /* placeholder colors */
 .navbar {
     height: 70px;
