@@ -27,6 +27,7 @@ body {
     margin: 0;
     padding: 0;
     background: var(--vape-shadow);
+    overflow-x: hidden;
 }
 
 ul {
@@ -105,10 +106,10 @@ button {
     height: 66vh;
   }
   
-  .splash-title {
+  /* .splash-title {
     font-family: "Bangers", cursive;
     font-size: 10rem;
-  }
+  } */
   
   .splash-battleship-image {
     position: absolute;
@@ -161,7 +162,7 @@ button {
   }
 
   .battleship-grid div {
-    border: 1px solid hsla(0, 0%, 100%, .2);
+    border: 1px solid hsla(0, 0%, 100%, 0.2);
   }
   
   .grid-computer > .taken,
@@ -265,9 +266,6 @@ button {
     border-radius: 2.3vmin;
   }
   
-  .battleship-grid div {
-    border: 1px solid hsla(0, 0%, 100%, 0.2);
-  }
   
   .destroyer-container {
     --width: 2;
@@ -407,6 +405,6 @@ button {
 .logo:hover {
     animation: color-rotate 1s;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: alternate; 
 }
 
