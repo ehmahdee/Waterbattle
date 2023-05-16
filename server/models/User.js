@@ -19,10 +19,10 @@ const userSchema = new Schema({
         required: true,
         minlength: 5,
     },
-    matchHistory: [
+    matches: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'matchHistory',
+            ref: 'matches',
         },
     ],
 });
