@@ -3,7 +3,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const matchSchema = new Schema({
     userId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
