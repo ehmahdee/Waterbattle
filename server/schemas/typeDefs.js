@@ -5,7 +5,7 @@ const typeDefs = gql`
         _id: ID!
         username: String
         email: String
-        matchHistory: [Match]
+        matches: [Match]!
     }
     type Match {
         _id: ID!
