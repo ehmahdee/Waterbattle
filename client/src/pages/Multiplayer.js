@@ -1,25 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplayer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Nunito:wght@300&display=swap"
-        rel="stylesheet">
-    <script>
-        let gameMode = 'multiPlayer'
-    </script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="app.js" charset="utf-8" defer></script>
-</head>
+import Auth from '../utils/auth';
 
-<body>
-    <nav class="navbar">
+const Multiplayer = () => {
+    // javascript
+    
+
+    return (
+        <div> <nav class="navbar">
         <ul class="navbar-nav">
             <li class="nav-item">High Scores</li>
             <li class="nav-item">New Game</li>
@@ -86,9 +77,8 @@
                 <div id="carrier-4"></div>
             </div>
         </div>
-    </div>
+    </div></div>
+    )
+}
 
-    <footer></footer>
-</body>
-
-</html>
+export default Multiplayer;
