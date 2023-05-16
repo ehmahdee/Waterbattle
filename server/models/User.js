@@ -22,10 +22,22 @@ const userSchema = new Schema({
     matches: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'matches',
+            ref: 'Match',
         },
     ],
-});
+},
+    {
+        toJSON: {
+            virtuals: true,
+        },
+        id: false,
+    }
+);
+
+// userSchema.virtual('winCount').get(function () {
+//     let winArray = this.matches.filter(match.result === 'win');
+//     return winArray.length;
+// })
 
 userSchema.pre('save', async function (next) {
     if (this.isNew || this.isModified('password')) {

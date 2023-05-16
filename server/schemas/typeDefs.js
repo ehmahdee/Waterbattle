@@ -6,6 +6,7 @@ const typeDefs = gql`
         username: String
         email: String
         matches: [Match]!
+        winCount: Int
     }
     type Match {
         _id: ID!
@@ -21,9 +22,9 @@ const typeDefs = gql`
         users: [User]!
     }
     type Mutation {
-        addProfile(name: String!, email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-
+        addMatch(result: String!): User
     }
 
 `;

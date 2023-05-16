@@ -1,12 +1,13 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
         <div className="button-container">
         <h1>Water Battle!!</h1>
-        <button href="">Sign Up</button>
-        <button href="">Login</button>
+        <Link to="/signup">Sign Up</Link>
+        <Link to="/login">Login</Link>
         </div>
     )
 }
