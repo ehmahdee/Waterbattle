@@ -76,6 +76,8 @@ h1 {
     -webkit-text-stroke-color: var(--parrot-fuscia);
 }
 
+
+
 .button-container {
     display: flex;
     align-items: center;
@@ -87,7 +89,8 @@ button {
     background-color: var(--parrot-blue);
     border: none;
     color: var(--humu-white);
-    padding: 15px 32px;
+    padding: 15px 32px; 
+    margin-right: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

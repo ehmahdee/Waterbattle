@@ -59,8 +59,7 @@ function App() {
                 element={<Signup />} 
               />
             </Routes>
-          </div>
-          <Footer />
+          </div>     
         </div>
       </Router>
     </ApolloProvider>
@@ -68,3 +67,4 @@ function App() {
 }
 
 export default App;
+ 
