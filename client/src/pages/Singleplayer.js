@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-
+import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
 import Auth from '../utils/auth';
 
 const Singleplayer = () => {
     //here goes nothing!
+const[gameMode, setGameMode] = useState ("singlePlayer");
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const userGrid = document.querySelector('grid-user')
+    useEffect(() => {
+        const userGrid = document.querySelector('.grid-user')
         const computerGrid = document.querySelector('.grid-computer')
         const displayGrid = document.querySelector('.grid-display')
         const ships = document.querySelectorAll('.ship')
@@ -34,6 +35,11 @@ const Singleplayer = () => {
         let enemyReady = false
         let allShipsPlaced = false
         let shotFired = -1
+        let direction = "vertical"
+        let selectedShipIndex = 1
+        let selectShipIndex = 1
+        let cruiserCount
+        
 
         const shipArray = [
             {
@@ -170,7 +176,8 @@ const Singleplayer = () => {
         function createBoard(grid, squares) {
             for (let i = 0; i < width * width; i++) {
                 const square = document.createElement('div')
-                square.dataset.id = igrid.appendChild(square)
+                square.dataset.id = i
+                grid.appendChild(square)
                 squares.push(square)
             }
         }
@@ -188,7 +195,7 @@ const Singleplayer = () => {
 
             if (!isTaken && !isAtLeftEdge && !isAtRightEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
 
-            else generate(ship)
+           /*  else generate(ship) */
         }
 
         function rotate() {
@@ -250,6 +257,7 @@ const Singleplayer = () => {
         }
 
         function dragDrop() {
+            console.log(userSquares);
             let shipNameWithLastId = draggedShip.lastChild.id
             let shipClass = shipNameWithLastId.slice(0, -2)
             let lastShipIndex = parseInt(shipNameWithLastId.substr(-1))
@@ -263,7 +271,10 @@ const Singleplayer = () => {
             selectedShipIndex = parseInt(selectedShipNameWithIndex.substr(-1))
 
             shipLastId = shipLastId - selectedShipIndex
-
+            /* const test = parseInt(this.dataset.id) - selectShipIndex + 0
+            console.log (selectShipIndex);
+            const test2 = parseInt(this.dataset.id) - selectShipIndex + width * 0
+            console.log (parseInt(this.dataset.id)); */
             if (isHorizontal && !newNotAllowedHorizontal.includes(shipLastId)) {
                 for (let i = 0; i < draggedShipLength; i++) {
                     let directionClass
@@ -350,7 +361,7 @@ const Singleplayer = () => {
             }
             checkForWins()
             currentPlayer = 'enemy'
-            if (gameMode === 'singlePlayer') playGameSingle()
+            /* if (gameMode === 'singlePlayer') playGameSingle() */
         }
 
         let cpuDestroyerCount = 0
@@ -433,55 +444,55 @@ const Singleplayer = () => {
             isGameOver = true
             startButton.removeEventListener('click', playGameSingle)
         }
-    })
+    },[])
 
 
     return (
         <div>
-            <nav class="navbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">High Scores</li>
-                    <li class="nav-item">New Game</li>
+            <nav className="navbar">
+                <ul className="navbar-nav">
+                    <li className="nav-item">High Scores</li>
+                    <li className="nav-item">New Game</li>
                 </ul>
             </nav>
             <h1>Single player</h1>
-            <div class="container">
-                <div class="battleship-grid grid-user"></div>
-                <div class="battleship-grid grid-computer"></div>
+            <div className="container">
+                <div className="battleship-grid grid-user"></div>
+                <div className="battleship-grid grid-computer"></div>
             </div>
 
-            <div class="container hidden-info">
-                <div class="setup-buttons" id="setup-buttons">
-                    <button id="start" class="btn">Start Game</button>
-                    <button id="rotate" class="btn">Rotate Ships</button>
+            <div className="container hidden-info">
+                <div className="setup-buttons" id="setup-buttons">
+                    <button id="start" className="btn">Start Game</button>
+                    <button id="rotate" className="btn">Rotate Ships</button>
                 </div>
-                <h3 id="whose-go" class="info-text">Your Go</h3>
-                <h3 id="info" class="info-text"></h3>
+                <h3 id="whose-go" className="info-text">Your Go</h3>
+                <h3 id="info" className="info-text"></h3>
             </div>
 
-            <div class="container">
-                <div class="grid-display">
-                    <div class="ship destroyer-container" draggable="true">
+            <div className="container">
+                <div className="grid-display">
+                    <div className="ship destroyer-container" draggable="true">
                         <div id="destroyer-0"></div>
                         <div id="destroyer-1"></div>
                     </div>
-                    <div class="ship submarine-container" draggable="true">
+                    <div className="ship submarine-container" draggable="true">
                         <div id="submarine-0"></div>
                         <div id="submarine-1"></div>
                         <div id="submarine-2"></div>
                     </div>
-                    <div class="ship cruiser-container" draggable="true">
+                    <div className="ship cruiser-container" draggable="true">
                         <div id="cruiser-0"></div>
                         <div id="cruiser-1"></div>
                         <div id="cruiser-2"></div>
                     </div>
-                    <div class="ship battleship-container" draggable="true">
+                    <div className="ship battleship-container" draggable="true">
                         <div id="battleship-0"></div>
                         <div id="battleship-1"></div>
                         <div id="battleship-2"></div>
                         <div id="battleship-3"></div>
                     </div>
-                    <div class="ship carrier-container" draggable="true">
+                    <div className="ship carrier-container" draggable="true">
                         <div id="carrier-0"></div>
                         <div id="carrier-1"></div>
                         <div id="carrier-2"></div>

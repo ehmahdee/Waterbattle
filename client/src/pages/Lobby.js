@@ -22,8 +22,8 @@ const Lobby = () => {
             <div className="splash-container">
                 <h1>Water Battle!!</h1>
                 <div className="button-container">
-                    <a href="./singleplayer.html" className="btn splash-btn">Single Player</a>
-                    <a href="./multiplayer.html" className="btn splash-btn">Multiplayer</a>
+                    <a href="./singleplayer" className="btn splash-btn">Single Player</a>
+                    <a href="./multiplayer" className="btn splash-btn">Multiplayer</a>
                 </div>
             </div>
         </div>
