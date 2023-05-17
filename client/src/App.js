@@ -14,7 +14,7 @@ import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Lobby from './pages/Lobby';
-
+import Singleplayer from './pages/Singleplayer';
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -62,6 +62,10 @@ function App() {
               <Route
                 path="/lobby"
                 element={<Lobby />}
+              />
+               <Route
+                path="/singleplayer"
+                element={<Singleplayer />}
               />
             </Routes>
           </div>     
