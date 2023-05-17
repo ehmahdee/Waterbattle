@@ -451,11 +451,11 @@ const[gameMode, setGameMode] = useState ("singlePlayer");
         <div>
             <nav className="navbar">
                 <ul className="navbar-nav">
-                    <li className="nav-item">High Scores</li>
-                    <li className="nav-item">New Game</li>
+                 {/*    <li className="nav-item">High Scores</li> */}
+                <li className="nav-item"><a href="./lobby">New Game</a></li>
                 </ul>
             </nav>
-            <h1>Single player</h1>
+            <h1>Singleplayer</h1>
             <div className="container">
                 <div className="battleship-grid grid-user"></div>
                 <div className="battleship-grid grid-computer"></div>
