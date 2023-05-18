@@ -746,6 +746,7 @@ const Singleplayer = () => {
           </div>
         </div>
       </div>
+      <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
     </div>
   );
 };
