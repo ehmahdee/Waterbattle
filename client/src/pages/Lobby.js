@@ -17,6 +17,7 @@ const Lobby = () => {
                     <a href="./multiplayer" className="btn splash-btn">Multiplayer</a>
                 </div>
             </div>
+            <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
         </div>
     );
 };
