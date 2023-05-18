@@ -79,7 +79,6 @@ function App() {
           </div>     
         </div>
         </div>
-        <Footer />
       </Router>
     </ApolloProvider>
   );
