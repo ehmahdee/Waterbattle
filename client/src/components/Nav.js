@@ -8,7 +8,9 @@ const Nav = () => {
       <nav className="navbar">
         <ul className="navbar-nav">
           <li className="nav-item"><a href="./lobby">New Game</a></li>
+          <li className="nav-item"><a href="./lobby">Logout</a></li>
         </ul>
+
       </nav>
     </div>
   )
