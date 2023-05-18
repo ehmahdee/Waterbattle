@@ -23,9 +23,9 @@ const Home = () => {
           <Link to="/login">Login</Link>
         </button>
       </div>
-      <audio src="/music/good_enough.mp3" controls>
+      <audio src="../audio/TopGunAnthem.mp3" controls>
           <embed
-            src="/music/good_enough.mp3"
+            src="../audio/TopGunAnthem.mp3"
             width="300"
             height="90"
             loop="true"
