@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
 import Auth from "../utils/auth";
+import ReactAudioPlayer from "react-audio-player";
 
 const Singleplayer = () => {
   //here goes nothing!
@@ -692,14 +693,24 @@ const Singleplayer = () => {
     }
   }, []);
 
+  let salute = true;
+
+  //when we win
+  //vape slides into screen
+
   return (
     <div>
       <h1>Singleplayer</h1>
+      <img
+        style={{ width: "90px" }}
+        src="../images/vaporeonsalute.png"
+        alt="salute"
+        className="salute"
+      />
       <div className="container">
         <div className="battleship-grid grid-user"></div>
         <div className="battleship-grid grid-computer"></div>
       </div>
-
       <div className="container hidden-info">
         <div className="setup-buttons" id="setup-buttons">
           <button id="start" className="btn">
@@ -746,15 +757,7 @@ const Singleplayer = () => {
           </div>
         </div>
       </div>
-      <audio src="../audio/DangerZone.mp3" controls>
-          <embed
-            src="../audio/DangerZone.mp3"
-            width="300"
-            height="90"
-            loop="true"
-            autostart="true"
-          />
-        </audio>
+      <ReactAudioPlayer src="../audio/DangerZone.mp3" autoPlay="true" volume="0.5" loop="true" controls/>
       <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
     </div>
   );
