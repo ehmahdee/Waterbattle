@@ -76,6 +76,14 @@ h1 {
     -webkit-text-stroke-color: var(--parrot-fuscia);
 }
 
+.player.p1, .player.p2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: var(--parrot-pink);
+  -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--parrot-pink);
+}
+
 h3 {
   font-size: 50px;
   font-family: 'Darumadrop One', cursive;
@@ -96,7 +104,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 100%;
+    height: 25%;
 }
 
 button {
@@ -112,6 +120,13 @@ button {
     font-family: 'Nunito', sans-serif;
     width: 200px;
     border-radius: 5px;
+}
+
+.audio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .splash-container {
@@ -146,17 +161,18 @@ button {
     text-decoration: none;
     cursor: pointer;
     border-radius: 0.2em;
-    color: #333;
+    color: var(--humu-white);
   }
   
   .btn:hover,
   .btn:focus {
-    background-color: hsl(30, 100%, 40%);
+    background-color: var(--parrot-pink);
   }
   
   .splash-btn {
     font-size: 2rem;
     margin-left: 2rem;
+    font-family: 'Nunito', sans-serif;
   }
   
   .splash-btn:first-child {

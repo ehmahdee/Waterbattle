@@ -526,12 +526,12 @@ const Multiplayer = () => {
       <h1>Multiplayer</h1>
 
       <div class="container">
-        <div class="player p1">
+        <div class="player p1" style={{marginRight: '10rem'}}>
           Player 1<div class="connected">Connected</div>
           <div class="ready">Ready</div>
         </div>
 
-        <div class="player p2">
+        <div class="player p2" style={{marginLeft: '10rem'}}>
           Player 2<div class="connected">Connected</div>
           <div class="ready">Ready</div>
         </div>
@@ -543,8 +543,8 @@ const Multiplayer = () => {
       </div>
 
       <div class="container hidden-info">
-        <div class="setup-buttons" id="setup-buttons">
-          <button id="start" class="btn">
+        <div class="setup-buttons" id="setup-buttons" style={{marginTop: '1rem'}}>
+          <button style={{marginRight: '3rem'}} id="start" class="btn">
             Start Game
           </button>
           <button id="rotate" class="btn">
@@ -588,7 +588,9 @@ const Multiplayer = () => {
           </div>
         </div>
       </div>
-      <ReactAudioPlayer src="../audio/DangerZone.mp3" autoPlay="true" volume="0.5" loop="true" controls/>
+      <div className="audio">
+        <ReactAudioPlayer src="../audio/DangerZone.mp3" autoPlay="true" volume="0.5" loop="true" style={{ marginTop: "1rem"}} controls />
+        </div>
       <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
     </div>
   );
