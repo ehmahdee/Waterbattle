@@ -10,15 +10,6 @@ const Lobby = () => {
 
     return (
         <div>
-            <nav className="navbar">
-                <ul className="navbar-nav">
-                   {/*  <li className="nav-item"><a href="./highScores.html">High scores</a></li> */}
-                    <li className="nav-item"><a href="./lobby">New Game</a></li>
-                </ul>
-            </nav>
-            <header>
-                {/* <a href="https://github.com/ehmahdee/Waterbattle" target="_blank"><img style={{width:'90px'}} src="../public/images/vaporeonlogo.png" alt="vaporeon" className="logo" /></a> */}
-            </header>
             <div className="splash-container">
                 <h1>Water Battle!!</h1>
                 <div className="button-container">
