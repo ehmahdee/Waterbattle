@@ -421,6 +421,16 @@ button {
     }
 }
 
+.splash-logo {
+  margin-top: 0px;
+}
+
+.splash-logo:hover {
+  animation: color-rotate 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
 .logo:hover {
     animation: color-rotate 1s;
     animation-iteration-count: infinite;

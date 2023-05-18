@@ -1,18 +1,40 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    return (
-        <div>
-        <h1>Water Battle!!</h1>
-        <img style={{ width: '90px' }} src="./images/splashhero.png" alt="hero image" class="logo" />
-        <div className="button-container">
-        <button><Link to="/signup">Sign Up</Link></button>
-        <button><Link to="/login">Login</Link></button>
-        </div>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h1 style={{ marginTop: "2rem" }}>Water Battle!!</h1>
+      <img
+        style={{ width: "600px" }}
+        src="../images/spashhero.png"
+        alt="hero image"
+        className="splash-logo"
+      />
+      <div
+        style={{ margin: "0rem", marginBottom: "2rem" }}
+        className="button-container"
+      >
+        <button>
+          <Link to="/signup">Sign Up</Link>
+        </button>
+        <button>
+          <Link to="/login">Login</Link>
+        </button>
+      </div>
+      <audio src="../audio/TopGunAnthem.mp3" controls>
+          <embed
+            src="../audio/TopGunAnthem.mp3"
+            width="300"
+            height="90"
+            loop="true"
+            autostart="true"
+          />
+        </audio>
+    </div>
+    
+  );
+};
 
 export default Home;
