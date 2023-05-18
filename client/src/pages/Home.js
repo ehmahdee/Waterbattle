@@ -6,6 +6,7 @@ const Home = () => {
     return (
         <div>
         <h1>Water Battle!!</h1>
+        <img style={{ width: '90px' }} src="./images/splashhero.png" alt="hero image" class="logo" />
         <div className="button-container">
         <button><Link to="/signup">Sign Up</Link></button>
         <button><Link to="/login">Login</Link></button>
