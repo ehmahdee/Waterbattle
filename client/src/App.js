@@ -13,6 +13,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Nav from './components/Nav'
 import Lobby from './pages/Lobby';
 import Singleplayer from './pages/Singleplayer';
 import Multiplayer from './pages/Multiplayer';
@@ -78,6 +79,7 @@ function App() {
           </div>     
         </div>
         </div>
+        <Footer />
       </Router>
     </ApolloProvider>
   );
