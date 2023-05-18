@@ -3,14 +3,13 @@
 
 ## Description
 
-Our motivation for developing Water Battle is to create an engaging and enjoyable gaming experience for users. We aim to provide a polished user interface, interactive features, and real-time feedback to immerse players in the thrill the Water Battle.
+Our motivation for developing Water Battle was to create an engaging and enjoyable gaming experience for users. We aimed to provide a polished user interface, interactive features, and real-time feedback to immerse players in the thrill the Water Battle.
 
-By using modern technologies such as React, GraphQL, Node.js, Express.js, MongoDB, and JWT authentication, we strive to deliver a high-quality and seamless gaming experience. These technologies enable us to build a responsive and scalable application that can handle multiple users and maintain data security.
+We built this project by using modern technologies such as React, GraphQL, Node.js, Express.js, MongoDB, and JWT authentication, while keeping our goal in mind which is to deliver a high-quality and seamless gaming experience. These technologies enabled us to build a responsive and scalable application that can handle multiple users and maintain data security.
 
-Ultimately, our motivation is to create a Battleship game that users can easily access, play, and enjoy. We aim to provide an immersive and competitive gaming experience while leveraging modern technologies to deliver a polished and user-friendly application.
+Ultimately, our goal is to create a battleship-type game that users can easily access, play, enjoy and have fun!
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+
 - What problem does it solve?
 - What did you learn?
 
