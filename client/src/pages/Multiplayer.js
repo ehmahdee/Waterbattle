@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
 import Auth from "../utils/auth";
+import ReactAudioPlayer from "react-audio-player";
 
 const Multiplayer = () => {
   //here goes nothing!
@@ -587,15 +588,7 @@ const Multiplayer = () => {
           </div>
         </div>
       </div>
-      <audio src="../audio/DangerZone.mp3" controls>
-          <embed
-            src="../audio/DangerZone.mp3"
-            width="300"
-            height="90"
-            loop="true"
-            autostart="true"
-          />
-        </audio>
+      <ReactAudioPlayer src="../audio/DangerZone.mp3" autoPlay="true" volume="0.5" loop="true" controls/>
       <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
     </div>
   );

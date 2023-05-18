@@ -440,6 +440,7 @@ button {
 .salute {
   /* width: 100px;
   height: 100px; */
+  display: none;
   position: relative;
   animation-name: example;
   animation-duration: 4s;

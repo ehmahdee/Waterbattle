@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
+import ReactAudioPlayer from "react-audio-player";
 
 const Home = () => {
   return (
@@ -23,15 +24,7 @@ const Home = () => {
           <Link to="/login">Login</Link>
         </button>
       </div>
-      <audio src="../audio/TopGunAnthem.mp3" controls>
-          <embed
-            src="../audio/TopGunAnthem.mp3"
-            width="300"
-            height="90"
-            loop="true"
-            autostart="true"
-          />
-        </audio>
+      <ReactAudioPlayer src="../audio/TopGunAnthem.mp3" autoPlay="true" volume="0.5" loop="true" controls/>
     </div>
     
   );
