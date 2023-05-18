@@ -334,7 +334,7 @@ button {
     border-radius: 100%;
     width: 2vmin;
     height: 2vmin;
-  }
+  } 
   
   .miss::after {
     background-color: white;
@@ -344,15 +344,15 @@ button {
     background-color: red;
   }
   
-  .miss::before {
+ /*  .miss::before {
     content: "";
     position: absolute;
     animation: hit 0.2s ease-out forwards;
     border: 1vmin solid white;
     border-radius: 100%;
-    width: 2vmin;
-    height: 2vmin;
-  }
+    width: .5vmin;
+    height: .5vmin;
+  } */
   
   .boom {
     animation: boom 0.2s ease-out forwards;

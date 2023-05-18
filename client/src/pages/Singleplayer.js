@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 
 const Singleplayer = () => {
     //here goes nothing!
-const[gameMode, setGameMode] = useState ("singlePlayer");
+    const [gameMode, setGameMode] = useState("singlePlayer");
 
     useEffect(() => {
         const userGrid = document.querySelector('.grid-user')
@@ -37,9 +37,8 @@ const[gameMode, setGameMode] = useState ("singlePlayer");
         let shotFired = -1
         let direction = "vertical"
         let selectedShipIndex = 1
-        let selectShipIndex = 1
-        let cruiserCount
-        
+        /* let selectShipIndex = 1 */
+        let count = 0
 
         const shipArray = [
             {
@@ -161,11 +160,11 @@ const[gameMode, setGameMode] = useState ("singlePlayer");
         }
 
         function startSinglePlayer() {
-            generate(shipArray[0])
-            generate(shipArray[1])
-            generate(shipArray[2])
-            generate(shipArray[3])
-            generate(shipArray[4])
+            generatedestroyer(shipArray[0])
+            generatesubmarine(shipArray[1])
+            generatecruiser(shipArray[2])
+            generatebattleship(shipArray[3]) 
+            generatecarrier(shipArray[4])
 
             startButton.addEventListener('click', () => {
                 setupButtons.style.display = 'none'
@@ -182,7 +181,12 @@ const[gameMode, setGameMode] = useState ("singlePlayer");
             }
         }
 
+
         function generate(ship) {
+            /*  if (count === 1000) {
+                 return 
+             }
+             count++ */
             let randomDirection = Math.floor(Math.random() * ship.directions.length)
             let current = ship.directions[randomDirection]
             if (randomDirection === 0) direction = 1
@@ -195,7 +199,110 @@ const[gameMode, setGameMode] = useState ("singlePlayer");
 
             if (!isTaken && !isAtLeftEdge && !isAtRightEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
 
-           /*  else generate(ship) */
+            /* else generate(ship)  */
+            /*  generate(shipArray[3])    */
+        }
+
+        function generatedestroyer(ship) {
+            /*  if (count === 1000) {
+                return 
+             }
+             count++ */
+            let randomDirection = Math.floor(Math.random() * ship.directions.length)
+            let current = ship.directions[randomDirection]
+            if (randomDirection === 0) direction = 1
+            if (randomDirection === 1) direction = 10
+            let randomStart = Math.abs(Math.floor(Math.random() * computerSquares.length - (ship.directions[0].length * direction)))
+
+            const isTaken = current.some(index => computerSquares[randomStart = index].classList.contains('taken'))
+            const isAtRightEdge = current.some(index => (randomStart + index) % width === width - 1)
+            const isAtLeftEdge = current.some(index => (randomStart + index) % width === 0)
+
+            if (!isTaken && !isAtLeftEdge && !isAtRightEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
+
+            /* else generate(ship)  */
+
+        }
+
+        function generatebattleship(ship) {
+            /*  if (count === 1000) {
+                return 
+            }
+             count++ */
+            let randomDirection = Math.floor(Math.random() * ship.directions.length)
+            let current = ship.directions[randomDirection]
+            if (randomDirection === 0) direction = 1
+            if (randomDirection === 1) direction = 10
+            let randomStart = Math.abs(Math.floor(Math.random() * computerSquares.length - (ship.directions[0].length * direction)))
+
+            const isTaken = current.some(index => computerSquares[randomStart = index].classList.contains('taken'))
+            const isAtRightEdge = current.some(index => (randomStart + index) % width === width - 1)
+            const isAtLeftEdge = current.some(index => (randomStart + index) % width === 0)
+
+            if (!isTaken && !isAtLeftEdge && !isAtRightEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
+
+            /* else generate(ship)  */
+
+        }
+        function generatesubmarine(ship) {
+            /*  if (count === 1000) {
+                return 
+            }
+             count++ */
+            let randomDirection = Math.floor(Math.random() * ship.directions.length)
+            let current = ship.directions[randomDirection]
+            if (randomDirection === 0) direction = 1
+            if (randomDirection === 1) direction = 10
+            let randomStart = Math.abs(Math.floor(Math.random() * computerSquares.length - (ship.directions[0].length * direction)))
+
+            const isTaken = current.some(index => computerSquares[randomStart = index].classList.contains('taken'))
+            const isAtRightEdge = current.some(index => (randomStart + index) % width === width - 1)
+            const isAtLeftEdge = current.some(index => (randomStart + index) % width === 0)
+
+            if (!isTaken && !isAtLeftEdge && !isAtRightEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
+
+            /* else generate(ship)  */
+
+        }
+        function generatecruiser(ship) {
+            /*  if (count === 1000) {
+                return 
+            }
+             count++ */
+            let randomDirection = Math.floor(Math.random() * ship.directions.length)
+            let current = ship.directions[randomDirection]
+            if (randomDirection === 0) direction = 1
+            if (randomDirection === 1) direction = 10
+            let randomStart = Math.abs(Math.floor(Math.random() * computerSquares.length - (ship.directions[0].length * direction)))
+
+            const isTaken = current.some(index => computerSquares[randomStart = index].classList.contains('taken'))
+            const isAtRightEdge = current.some(index => (randomStart + index) % width === width - 1)
+            const isAtLeftEdge = current.some(index => (randomStart + index) % width === 0)
+
+            if (!isTaken && !isAtLeftEdge && !isAtRightEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
+
+            /* else generate(ship)  */
+
+        }
+        function generatecarrier(ship) {
+            /*  if (count === 1000) {
+                return 
+            }
+             count++ */
+            let randomDirection = Math.floor(Math.random() * ship.directions.length)
+            let current = ship.directions[randomDirection]
+            if (randomDirection === 0) direction = 1
+            if (randomDirection === 1) direction = 10
+            let randomStart = Math.abs(Math.floor(Math.random() * computerSquares.length - (ship.directions[0].length * direction)))
+
+            const isTaken = current.some(index => computerSquares[randomStart = index].classList.contains('taken'))
+            const isAtRightEdge = current.some(index => (randomStart + index) % width === width - 1)
+            const isAtLeftEdge = current.some(index => (randomStart + index) % width === 0)
+
+            if (!isTaken && !isAtLeftEdge && !isAtRightEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
+
+            /* else generate(ship)  */
+
         }
 
         function rotate() {
@@ -280,14 +387,14 @@ const[gameMode, setGameMode] = useState ("singlePlayer");
                     let directionClass
                     if (i === 0) directionClass = 'start'
                     if (i === draggedShipLength - 1) directionClass = 'end'
-                    userSquares[parseInt(this.dataset.id) - selectShipIndex + i].classList.add('taken', 'horizontal', directionClass, shipClass)
+                    userSquares[parseInt(this.dataset.id) - selectedShipIndex + i].classList.add('taken', 'horizontal', directionClass, shipClass)
                 }
             } else if (!isHorizontal && !newNotAllowedVertical.includes(shipLastId)) {
                 for (let i = 0; i < draggedShipLength; i++) {
                     let directionClass
                     if (i === 0) directionClass = 'start'
                     if (i === draggedShipLength - 1) directionClass = 'end'
-                    userSquares[parseInt(this.dataset.id) - selectShipIndex + width * i].classList.add('taken', 'vertical', directionClass, shipClass)
+                    userSquares[parseInt(this.dataset.id) - selectedShipIndex + width * i].classList.add('taken', 'vertical', directionClass, shipClass)
                 }
             } else return
 
@@ -340,7 +447,7 @@ const[gameMode, setGameMode] = useState ("singlePlayer");
 
         let destroyerCount = 0
         let submarineCount = 0
-        let crusierCount = 0
+        let cruiserCount = 0
         let battleshipCount = 0
         let carrierCount = 0
 
@@ -361,7 +468,7 @@ const[gameMode, setGameMode] = useState ("singlePlayer");
             }
             checkForWins()
             currentPlayer = 'enemy'
-            /* if (gameMode === 'singlePlayer') playGameSingle() */
+            if (gameMode === 'singlePlayer') playGameSingle()
         }
 
         let cpuDestroyerCount = 0
@@ -444,15 +551,15 @@ const[gameMode, setGameMode] = useState ("singlePlayer");
             isGameOver = true
             startButton.removeEventListener('click', playGameSingle)
         }
-    },[])
+    }, [])
 
 
     return (
         <div>
             <nav className="navbar">
                 <ul className="navbar-nav">
-                 {/*    <li className="nav-item">High Scores</li> */}
-                <li className="nav-item"><a href="./lobby">New Game</a></li>
+                    {/*    <li className="nav-item">High Scores</li> */}
+                    <li className="nav-item"><a href="./lobby">New Game</a></li>
                 </ul>
             </nav>
             <h1>Singleplayer</h1>
