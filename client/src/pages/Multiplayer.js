@@ -587,6 +587,15 @@ const Multiplayer = () => {
           </div>
         </div>
       </div>
+      <audio src="../audio/DangerZone.mp3" controls>
+          <embed
+            src="../audio/DangerZone.mp3"
+            width="300"
+            height="90"
+            loop="true"
+            autostart="true"
+          />
+        </audio>
       <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
     </div>
   );
