@@ -163,7 +163,7 @@ const Singleplayer = () => {
             generatedestroyer(shipArray[0])
             generatesubmarine(shipArray[1])
             generatecruiser(shipArray[2])
-            generatebattleship(shipArray[3]) 
+            generatebattleship(shipArray[3])
             generatecarrier(shipArray[4])
 
             startButton.addEventListener('click', () => {
