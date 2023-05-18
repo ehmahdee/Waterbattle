@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer>Thanks 4 playing ❤️</footer>
+    <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
   )
 }
 

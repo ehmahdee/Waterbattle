@@ -76,7 +76,21 @@ h1 {
     -webkit-text-stroke-color: var(--parrot-fuscia);
 }
 
+h3 {
+  font-size: 50px;
+  font-family: 'Darumadrop One', cursive;
+  color: var(--parrot-pink);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--parrot-fuscia);
+}
 
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Darumadrop One', cursive;
+  color: var(--vape-highlight);
+}
 
 .button-container {
     display: flex;
