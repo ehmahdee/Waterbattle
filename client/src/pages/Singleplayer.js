@@ -617,193 +617,60 @@ const Singleplayer = () => {
                 }
             }
         }
-      }
-    }
 
-    function playerReady(num) {
-      let player = `.p${parseInt(num) + 1}`;
-      document.querySelector(`${player}.ready`).classList.toggle("active");
-    }
+        function playerReady(num) {
+            let player = `.p${parseInt(num) + 1}`;
+            document.querySelector(`${player}.ready`).classList.toggle("active");
+        }
 
-    function playGameSingle() {
-      if (isGameOver) return;
-      if (currentPlayer === "user") {
-        turnDisplay.innerHTML = "Your Turn";
-        computerSquares.forEach((square) =>
-          square.addEventListener("click", function (e) {
-            shotFired = square.dataset.id;
-            revealSquare(square.classList);
-          })
-        );
-      }
-      if (currentPlayer === "enemy") {
-        turnDisplay.innerHTML = "Computers Go";
-        setTimeout(enemyGo, 1000);
-      }
-    }
+        function playGameSingle() {
+            if (isGameOver) return;
+            if (currentPlayer === "user") {
+                turnDisplay.innerHTML = "Your Turn";
+                computerSquares.forEach((square) =>
+                    square.addEventListener("click", function (e) {
+                        shotFired = square.dataset.id;
+                        revealSquare(square.classList);
+                    })
+                );
+            }
+            if (currentPlayer === "enemy") {
+                turnDisplay.innerHTML = "Computers Go";
+                setTimeout(enemyGo, 1000);
+            }
+        }
 
-    let destroyerCount = 0;
-    let submarineCount = 0;
-    let cruiserCount = 0;
-    let battleshipCount = 0;
-    let carrierCount = 0;
+        let destroyerCount = 0;
+        let submarineCount = 0;
+        let cruiserCount = 0;
+        let battleshipCount = 0;
+        let carrierCount = 0;
 
-    function revealSquare(classList) {
-      const enemySquare = computerGrid.querySelector(
-        `div[data-id='${shotFired}']`
-      );
-      const obj = Object.values(classList);
-      if (
-        !enemySquare.classList.contains("boom") &&
-        currentPlayer === "user" &&
-        !isGameOver
-      ) {
-        if (obj.includes("destroyer")) destroyerCount++;
-        if (obj.includes("submarine")) submarineCount++;
-        if (obj.includes("cruiser")) cruiserCount++;
-        if (obj.includes("battleship")) battleshipCount++;
-        if (obj.includes("carrier")) carrierCount++;
-      }
-      if (obj.includes("taken")) {
-        enemySquare.classList.add("boom");
-      } else {
-        enemySquare.classList.add("miss");
-      }
-      checkForWins();
-      currentPlayer = "enemy";
-      if (gameMode === "singlePlayer") playGameSingle();
-    }
-
-    let cpuDestroyerCount = 0;
-    let cpuSubmarineCount = 0;
-    let cpuCruiserCount = 0;
-    let cpuBattleshipCount = 0;
-    let cpuCarrierCount = 0;
-
-    function enemyGo(square) {
-      if (gameMode === "singlePlayer")
-        square = Math.floor(Math.random() * userSquares.length);
-      if (!userSquares[square].classList.contains("boom")) {
-        const hit = userSquares[square].classList.contains("taken");
-        userSquares[square].classList.add(hit ? "boom" : "miss");
-        if (userSquares[square].classList.contains("destroyer"))
-          cpuDestroyerCount++;
-        if (userSquares[square].classList.contains("submarine"))
-          cpuSubmarineCount++;
-        if (userSquares[square].classList.contains("cruiser"))
-          cpuCruiserCount++;
-        if (userSquares[square].classList.contains("battleship"))
-          cpuBattleshipCount++;
-        if (userSquares[square].classList.contains("carrier"))
-          cpuCarrierCount++;
-        checkForWins();
-      } else if (gameMode === "singlePlayer") enemyGo();
-      currentPlayer = "user";
-      turnDisplay.innerHTML = "Your Turn";
-    }
-
-    function checkForWins() {
-      let enemy = "computer";
-      if (gameMode === "multiPlayer") enemy = "enemy";
-      if (destroyerCount === 2) {
-        infoDisplay.innerHTML = `You sunk the ${enemy}'s destroyer`;
-        destroyerCount = 10;
-      }
-      if (submarineCount === 3) {
-        infoDisplay.innerHTML = `You sunk the ${enemy}'s submarine`;
-        submarineCount = 10;
-      }
-      if (cruiserCount === 3) {
-        infoDisplay.innerHTML = `You sunk the ${enemy}'s cruiser`;
-        cruiserCount = 10;
-      }
-      if (battleshipCount === 4) {
-        infoDisplay.innerHTML = `You sunk the ${enemy}'s battleship`;
-        battleshipCount = 10;
-      }
-      if (carrierCount === 5) {
-        infoDisplay.innerHTML = `You sunk the ${enemy}'s carrier`;
-        carrierCount = 10;
-      }
-      if (cpuDestroyerCount === 2) {
-        infoDisplay.innerHTML = `${enemy} sunk your destroyer`;
-        cpuDestroyerCount = 10;
-      }
-      if (cpuSubmarineCount === 3) {
-        infoDisplay.innerHTML = `${enemy} sunk your submarine`;
-        cpuSubmarineCount = 10;
-      }
-      if (cpuCruiserCount === 3) {
-        infoDisplay.innerHTML = `${enemy} sunk your cruiser`;
-        cpuCruiserCount = 10;
-      }
-      if (cpuBattleshipCount === 4) {
-        infoDisplay.innerHTML = `${enemy} sunk your battleship`;
-        cpuBattleshipCount = 10;
-      }
-      if (cpuCarrierCount === 5) {
-        infoDisplay.innerHTML = `${enemy} sunk your carrier`;
-        cpuCarrierCount = 10;
-      }
-
-      if (
-        destroyerCount +
-          submarineCount +
-          cruiserCount +
-          battleshipCount +
-          carrierCount ===
-        50
-      ) {
-        infoDisplay.innerHTML = "YOU WIN";
-        gameOver();
-      }
-      if (
-        cpuDestroyerCount +
-          cpuSubmarineCount +
-          cpuCruiserCount +
-          cpuBattleshipCount +
-          cpuCarrierCount ===
-        50
-      ) {
-        infoDisplay.innerHTML = `${enemy.toUpperCase()} WINS`;
-        gameOver();
-      }
-    }
-
-    function gameOver() {
-      isGameOver = true;
-      startButton.removeEventListener("click", playGameSingle);
-    }
-  }, []);
-
-  let salute = true;
-
-  //when we win
-  //vape slides into screen
-
-  return (
-    <div>
-      <h1>Singleplayer</h1>
-      <img
-        style={{ width: "90px" }}
-        src="../images/vaporeonsalute.png"
-        alt="salute"
-        className="salute"
-      />
-      <div className="container">
-        <div className="battleship-grid grid-user"></div>
-        <div className="battleship-grid grid-computer"></div>
-      </div>
-      <div className="container hidden-info">
-        <div className="setup-buttons" id="setup-buttons">
-          <button id="start" className="btn">
-            Start Game
-          </button>
-          <button id="rotate" className="btn">
-            Rotate Ships
-          </button>
-        </div>
-
+        function revealSquare(classList) {
+            const enemySquare = computerGrid.querySelector(
+                `div[data-id='${shotFired}']`
+            );
+            const obj = Object.values(classList);
+            if (
+                !enemySquare.classList.contains("boom") &&
+                currentPlayer === "user" &&
+                !isGameOver
+            ) {
+                if (obj.includes("destroyer")) destroyerCount++;
+                if (obj.includes("submarine")) submarineCount++;
+                if (obj.includes("cruiser")) cruiserCount++;
+                if (obj.includes("battleship")) battleshipCount++;
+                if (obj.includes("carrier")) carrierCount++;
+            }
+            if (obj.includes("taken")) {
+                enemySquare.classList.add("boom");
+            } else {
+                enemySquare.classList.add("miss");
+            }
+            checkForWins();
+            currentPlayer = "enemy";
+            if (gameMode === "singlePlayer") playGameSingle();
+        }
 
         let cpuDestroyerCount = 0;
         let cpuSubmarineCount = 0;
@@ -907,66 +774,70 @@ const Singleplayer = () => {
         }
     }, []);
 
-    return (
-        <div>
-            <h1>Singleplayer</h1>
-            <div className="container">
-                <div className="battleship-grid grid-user"></div>
-                <div className="battleship-grid grid-computer"></div>
+return (
+    <div>
+        <h1>Singleplayer</h1>
+        <img
+            style={{ width: "90px" }}
+            src="../images/vaporeonsalute.png"
+            alt="salute"
+            className="salute"
+        />
+        <div className="container">
+            <div className="battleship-grid grid-user"></div>
+            <div className="battleship-grid grid-computer"></div>
+        </div>
+        <div className="container hidden-info">
+            <div className="setup-buttons" id="setup-buttons">
+                <button id="start" className="btn">
+                    Start Game
+                </button>
+                <button id="rotate" className="btn">
+                    Rotate Ships
+                </button>
             </div>
 
-            <div className="container hidden-info">
-                <div className="setup-buttons" id="setup-buttons">
-                    <button id="start" className="btn">
-                        Start Game
-                    </button>
-                    <button id="rotate" className="btn">
-                        Rotate Ships
-                    </button>
-                </div>
-
-        <h3 id="whose-go" className="info-text">
-          Your Turn
-        </h3>
-        <h3 id="info" className="info-text"></h3>
-      </div>
-
-      <div className="container">
-        <div className="grid-display">
-          <div className="ship destroyer-container" draggable="true">
-            <div id="destroyer-0"></div>
-            <div id="destroyer-1"></div>
-          </div>
-          <div className="ship submarine-container" draggable="true">
-            <div id="submarine-0"></div>
-            <div id="submarine-1"></div>
-            <div id="submarine-2"></div>
-          </div>
-          <div className="ship cruiser-container" draggable="true">
-            <div id="cruiser-0"></div>
-            <div id="cruiser-1"></div>
-            <div id="cruiser-2"></div>
-          </div>
-          <div className="ship battleship-container" draggable="true">
-            <div id="battleship-0"></div>
-            <div id="battleship-1"></div>
-            <div id="battleship-2"></div>
-            <div id="battleship-3"></div>
-          </div>
-          <div className="ship carrier-container" draggable="true">
-            <div id="carrier-0"></div>
-            <div id="carrier-1"></div>
-            <div id="carrier-2"></div>
-            <div id="carrier-3"></div>
-            <div id="carrier-4"></div>
-          </div>
+            <h3 id="whose-go" className="info-text">
+                Your Turn
+            </h3>
+            <h3 id="info" className="info-text"></h3>
         </div>
-      </div>
-      <ReactAudioPlayer src="../audio/DangerZone.mp3" autoPlay="true" volume="0.5" loop="true" controls/>
-      <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
-    </div>
-  );
 
+        <div className="container">
+            <div className="grid-display">
+                <div className="ship destroyer-container" draggable="true">
+                    <div id="destroyer-0"></div>
+                    <div id="destroyer-1"></div>
+                </div>
+                <div className="ship submarine-container" draggable="true">
+                    <div id="submarine-0"></div>
+                    <div id="submarine-1"></div>
+                    <div id="submarine-2"></div>
+                </div>
+                <div className="ship cruiser-container" draggable="true">
+                    <div id="cruiser-0"></div>
+                    <div id="cruiser-1"></div>
+                    <div id="cruiser-2"></div>
+                </div>
+                <div className="ship battleship-container" draggable="true">
+                    <div id="battleship-0"></div>
+                    <div id="battleship-1"></div>
+                    <div id="battleship-2"></div>
+                    <div id="battleship-3"></div>
+                </div>
+                <div className="ship carrier-container" draggable="true">
+                    <div id="carrier-0"></div>
+                    <div id="carrier-1"></div>
+                    <div id="carrier-2"></div>
+                    <div id="carrier-3"></div>
+                    <div id="carrier-4"></div>
+                </div>
+            </div>
+        </div>
+        <ReactAudioPlayer src="../audio/DangerZone.mp3" autoPlay="true" volume="0.5" loop="true" controls />
+        <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
+    </div>
+);
 };
 
 export default Singleplayer;
