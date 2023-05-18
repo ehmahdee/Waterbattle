@@ -188,35 +188,35 @@ const Singleplayer = () => {
             }
         }
 
-        // function generate(ship) {
-        //     let randomDirection = Math.floor(Math.random() * ship.directions.length);
-        //     let current = ship.directions[randomDirection];
-        //     let isTaken = false;
-        //     let randomStart = 0;
+        function generate(ship) {
+            let randomDirection = Math.floor(Math.random() * ship.directions.length);
+            let current = ship.directions[randomDirection];
+            let isTaken = false;
+            let randomStart = 0;
 
-        //     do {
-        //         isTaken = false;
-        //         randomDirection = Math.floor(Math.random() * ship.directions.length);
-        //         current = ship.directions[randomDirection];
-        //         randomStart = Math.floor(Math.random() * computerSquares.length);
-        //         const isAtRightEdge = current.some(
-        //             (index) => (randomStart + index) % width === width - 1
-        //         );
-        //         const isAtLeftEdge = current.some(
-        //             (index) => (randomStart + index) % width === 0
-        //         );
+            do {
+                isTaken = false;
+                randomDirection = Math.floor(Math.random() * ship.directions.length);
+                current = ship.directions[randomDirection];
+                randomStart = Math.floor(Math.random() * computerSquares.length);
+                const isAtRightEdge = current.some(
+                    (index) => (randomStart + index) % width === width - 1
+                );
+                const isAtLeftEdge = current.some(
+                    (index) => (randomStart + index) % width === 0
+                );
 
-        //         if (!isAtLeftEdge && !isAtRightEdge) {
-        //             isTaken = current.some((index) =>
-        //                 computerSquares[randomStart + index].classList.contains("taken")
-        //             );
-        //         }
-        //     } while (isTaken);
+                if (!isAtLeftEdge && !isAtRightEdge) {
+                    isTaken = current.some((index) =>
+                        computerSquares[randomStart + index].classList.contains("taken")
+                    );
+                }
+            } while (isTaken);
 
-        //     current.forEach((index) => {
-        //         computerSquares[randomStart + index].classList.add("taken", ship.name);
-        //     });
-        // }
+            current.forEach((index) => {
+                computerSquares[randomStart + index].classList.add("taken", ship.name);
+            });
+        }
 
         function generate(ship) {
             let randomDirection = Math.floor(Math.random() * ship.directions.length);
@@ -225,8 +225,8 @@ const Singleplayer = () => {
             if (randomDirection === 1) direction = 10;
             let randomStart = Math.floor(Math.random() * 100);
 
-            const isTaken = current.some(index =>
-                computerSquares[randomStart + index].classList.contains('taken')
+            const isTaken = current.some((index) =>
+                computerSquares[randomStart].classList.contains("taken")
             );
             const isAtRightEdge = current.some(
                 (index) => (randomStart + index) % width === width - 1
@@ -461,10 +461,9 @@ const Singleplayer = () => {
             } else {
                 enemySquare.classList.add("miss");
             }
-            
+            checkForWins();
             currentPlayer = "enemy";
             if (gameMode === "singlePlayer") playGameSingle();
-            checkForWins();
         }
 
         let cpuDestroyerCount = 0;
@@ -500,43 +499,43 @@ const Singleplayer = () => {
             if (gameMode === "multiPlayer") enemy = "enemy";
             if (destroyerCount === 2) {
                 infoDisplay.innerHTML = `You sunk the ${enemy}'s destroyer`;
-                destroyerCount = 2;
+                destroyerCount = 10;
             }
             if (submarineCount === 3) {
                 infoDisplay.innerHTML = `You sunk the ${enemy}'s submarine`;
-                submarineCount = 3;
+                submarineCount = 10;
             }
             if (cruiserCount === 3) {
                 infoDisplay.innerHTML = `You sunk the ${enemy}'s cruiser`;
-                cruiserCount = 3;
+                cruiserCount = 10;
             }
             if (battleshipCount === 4) {
                 infoDisplay.innerHTML = `You sunk the ${enemy}'s battleship`;
-                battleshipCount = 4;
+                battleshipCount = 10;
             }
             if (carrierCount === 5) {
                 infoDisplay.innerHTML = `You sunk the ${enemy}'s carrier`;
-                carrierCount = 5;
+                carrierCount = 10;
             }
             if (cpuDestroyerCount === 2) {
                 infoDisplay.innerHTML = `${enemy} sunk your destroyer`;
-                cpuDestroyerCount = 2;
+                cpuDestroyerCount = 10;
             }
             if (cpuSubmarineCount === 3) {
                 infoDisplay.innerHTML = `${enemy} sunk your submarine`;
-                cpuSubmarineCount = 3;
+                cpuSubmarineCount = 10;
             }
             if (cpuCruiserCount === 3) {
                 infoDisplay.innerHTML = `${enemy} sunk your cruiser`;
-                cpuCruiserCount = 3;
+                cpuCruiserCount = 10;
             }
             if (cpuBattleshipCount === 4) {
                 infoDisplay.innerHTML = `${enemy} sunk your battleship`;
-                cpuBattleshipCount = 4;
+                cpuBattleshipCount = 10;
             }
             if (cpuCarrierCount === 5) {
                 infoDisplay.innerHTML = `${enemy} sunk your carrier`;
-                cpuCarrierCount = 5;
+                cpuCarrierCount = 10;
             }
 
             if (
@@ -545,7 +544,7 @@ const Singleplayer = () => {
                 cruiserCount +
                 battleshipCount +
                 carrierCount ===
-                17
+                50
             ) {
                 infoDisplay.innerHTML = "YOU WIN";
                 gameOver();
@@ -556,10 +555,9 @@ const Singleplayer = () => {
                 cpuCruiserCount +
                 cpuBattleshipCount +
                 cpuCarrierCount ===
-                17
+                50
             ) {
                 infoDisplay.innerHTML = `${enemy.toUpperCase()} WINS`;
-                
                 gameOver();
             }
         }
