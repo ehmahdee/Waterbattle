@@ -25,7 +25,7 @@ const Home = () => {
         </button>
       </div>
       <div className="audio">
-      <ReactAudioPlayer src="../audio/TopGunAnthem.mp3" autoPlay="true" volume="0.5" loop="true" controls/>
+      <ReactAudioPlayer src="../audio/TopGunAnthem.mp3" autoPlay="true" volume="0.1" loop="true" controls/>
       </div>
     </div>
     

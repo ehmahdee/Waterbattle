@@ -314,10 +314,6 @@ const Multiplayer = () => {
       selectedShipIndex = parseInt(selectedShipNameWithIndex.substr(-1));
 
       shipLastId = shipLastId - selectedShipIndex;
-      /* const test = parseInt(this.dataset.id) - selectShipIndex + 0
-            console.log (selectShipIndex);
-            const test2 = parseInt(this.dataset.id) - selectShipIndex + width * 0
-            console.log (parseInt(this.dataset.id)); */
       if (isHorizontal && !newNotAllowedHorizontal.includes(shipLastId)) {
         for (let i = 0; i < draggedShipLength; i++) {
           let directionClass;
@@ -589,7 +585,7 @@ const Multiplayer = () => {
         </div>
       </div>
       <div className="audio">
-        <ReactAudioPlayer src="../audio/DangerZone.mp3" autoPlay="true" volume="0.5" loop="true" style={{ marginTop: "1rem"}} controls />
+        <audio id="myaudio" src="../audio/DangerZone.mp3" autoPlay="true" volume="0.1" loop="true" style={{ marginTop: "1rem"}} controls />
         </div>
       <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
     </div>

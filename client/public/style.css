@@ -127,6 +127,7 @@ button {
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .splash-container {
@@ -454,16 +455,16 @@ button {
 }
 
 .salute {
-  /* width: 100px;
-  height: 100px; */
+  height: 20vh;
   display: none;
   position: relative;
   animation-name: example;
   animation-duration: 4s;
   animation-iteration-count: 1;
+  z-index: 1;
 }
 
 @keyframes salute {
-  0%   { left:0px; top:0px;}
+  0%   { left:-100px; top:0px;}
   25%  { left:200px; top:0px;}
 }
