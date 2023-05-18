@@ -449,13 +449,7 @@ const[gameMode, setGameMode] = useState ("multiPlayer");
     
 
     return (
-        <div> <nav class="navbar">
-        <ul class="navbar-nav">
-            {/* <li class="nav-item">High Scores</li> */}
-            <li className="nav-item"><a href="./lobby">New Game</a></li>
-        </ul>
-    </nav>
-
+        <div> 
     <h1>Multiplayer</h1>
 
     <div class="container">
