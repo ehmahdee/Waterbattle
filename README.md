@@ -40,27 +40,27 @@ LINK TO DEPLOYED APPLICATION:
 ## Installation
 
 The following dependencies are installed for the client:
-    - apollo/client^3.5.8
-    - testing-library/jest-dom^5.11.4
-    - testing-library/react^11.1.0
-    - testing-library/user-event^12.1.10
-    - graphql^15.4.0
-    - jwt-decode^3.1.2
-    - react^17.0.1
-    - react-audio-player^0.17.0
-    - react-dom^17.0.1
-    - react-router-dom^6.2.1
-    - react-scripts^5.0.1
-    - web-vitals^0.2.4
+- apollo/client^3.5.8
+- testing-library/jest-dom^5.11.4
+- testing-library/react^11.1.0
+- testing-library/user-event^12.1.10
+- graphql^15.4.0
+- jwt-decode^3.1.2
+- react^17.0.1
+- react-audio-player^0.17.0
+- react-dom^17.0.1
+- react-router-dom^6.2.1
+- react-scripts^5.0.1
+- web-vitals^0.2.4
 
 The following dependencies are insalled for the server:
-    - apollo-server-express^3.6.2
-    - bcrypt^5.0.0
-    - express^4.17.2
-    - graphql^16.3.0
-    - jsonwebtoken^8.5.1
-    - mongoose^6.1.8
-    - socket.io^4.6.1
+- apollo-server-express^3.6.2
+- bcrypt^5.0.0
+- express^4.17.2
+- graphql^16.3.0
+- jsonwebtoken^8.5.1
+- mongoose^6.1.8
+- socket.io^4.6.1
 
 
 ## Usage
