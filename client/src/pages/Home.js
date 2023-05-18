@@ -24,7 +24,9 @@ const Home = () => {
           <Link to="/login">Login</Link>
         </button>
       </div>
+      <div className="audio">
       <ReactAudioPlayer src="../audio/TopGunAnthem.mp3" autoPlay="true" volume="0.5" loop="true" controls/>
+      </div>
     </div>
     
   );

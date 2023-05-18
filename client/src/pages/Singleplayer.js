@@ -788,8 +788,8 @@ return (
             <div className="battleship-grid grid-computer"></div>
         </div>
         <div className="container hidden-info">
-            <div className="setup-buttons" id="setup-buttons">
-                <button id="start" className="btn">
+            <div className="setup-buttons" id="setup-buttons" style={{marginTop: '1rem'}}>
+                <button style={{marginRight: '3rem'}} id="start" className="btn">
                     Start Game
                 </button>
                 <button id="rotate" className="btn">
@@ -834,7 +834,9 @@ return (
                 </div>
             </div>
         </div>
-        <ReactAudioPlayer src="../audio/DangerZone.mp3" autoPlay="true" volume="0.5" loop="true" controls />
+        <div className="audio">
+        <ReactAudioPlayer src="../audio/DangerZone.mp3" autoPlay="true" volume="0.5" loop="true" style={{ marginTop: "1rem"}} controls />
+        </div>
         <footer>Thanks 4 playing! ❤️ Team Vaporeon</footer>
     </div>
 );
