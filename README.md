@@ -3,7 +3,7 @@
 
 ## Description
 
-Our motivation for developing Water Battle was to create an engaging and enjoyable gaming experience for users. We aimed to provide a polished user interface, interactive features, and real-time feedback to immerse players in the thrill the Water Battle.
+Our motivation for developing Water Battle was to create an engaging and enjoyable gaming experience for users. We aimed to provide a polished user interface, interactive features, and real-time feedback to immerse players in the thrill of the Water Battle.
 
 We built this project by using modern technologies such as React, GraphQL, Node.js, Express.js, MongoDB, and JWT authentication, while keeping our goal in mind which is to deliver a high-quality and seamless gaming experience. These technologies enabled us to build a responsive and scalable application that can handle multiple users and maintain data security.
 
@@ -14,7 +14,7 @@ SO THAT I can enjoy a seamless gaming experience."
 
 By developing this project, this further solidified our learned knowledge in React for the front end, MongoDB and MongooseODM for the database, queries and mutations for retrieving, adding, updating, and deleting data, and JWT for authentication to protect sensitive information on the server.  
 
-Some challenges we faced were getting our hits to land against the computer.  At first there was no way the user could win against the computer because the user's hitbox was too big.  This was fixed and the user could then become a viable contender against the computer. Additionally, the CPU's ships would overlap and be placed off-grid so again, the user could not win because overlapped ships were not getting hit.  Code was updated so that the user's ships could get hit in against the computer.  We were also challenged in getting the multiplayer to work with Socket.io.  Thus, multiplayer ability has been moved to an idea for future development.  
+Some challenges we faced were getting our hits to land against the computer.  At first there was no way the user could win against the computer because the user's hitbox was too big. This was fixed and the user could then become a viable contender against the computer. Additionally, the CPU's ships would overlap and be placed off-grid so again, the user could not win because overlapped ships were not getting hit. Code was updated so that the user's ships could get a hit in against the computer. We were also challenged in getting the multiplayer to work with Socket.io. Thus, multiplayer ability has been moved to an idea for future development.  
 
 Directions for future development include: 
 - Implementing multiplayer ability and functionality
@@ -91,7 +91,7 @@ The user can then either start a New Game or Logout and return to the landing pa
 
 ## Credits
 
-Team VAP(e)||"eon" consists of Emma Daily, Michael Huang, Michael Radar, and Patricia Alberto.  
+Team VAP(e)||"eon" consists of Emma Daily, Michael Huang, Michael Rader, and Patricia Alberto.  
 
 We would like to give special thanks to our instructor Bryan Swarthout for spending time with us to help troubleshoot and debug our code to get our ships to show up on the play-grid.  Additionally would like to extend thanks to our bootcamp TA Shawn Tschoepe for his encouragement and help setting up our components and refractoring our code.  
 
