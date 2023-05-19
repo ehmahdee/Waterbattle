@@ -58,12 +58,11 @@ The following dependencies are insalled for the server by running 'npm i':
 - graphql^16.3.0
 - jsonwebtoken^8.5.1
 - mongoose^6.1.8
-- socket.io^4.6.1
 
 
 ## Usage
 
-LINK TO DEPLOYED APPLICATION: 
+LINK TO DEPLOYED APPLICATION: https://evening-ocean-56179.herokuapp.com/
 
 When the user arrives on the landing page of our application, they will see the homepage of WATERBATTLE.  Here new users can sign up and returning users can login to enter the game.  
 
