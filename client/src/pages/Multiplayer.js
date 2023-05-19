@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
+
 import Auth from "../utils/auth";
 import ReactAudioPlayer from "react-audio-player";
 
@@ -11,6 +11,7 @@ const Multiplayer = () => {
   const [gameMode, setGameMode] = useState("multiPlayer");
 
   useEffect(() => {
+    const io = () => {}
     const userGrid = document.querySelector(".grid-user");
     const computerGrid = document.querySelector(".grid-computer");
     const displayGrid = document.querySelector(".grid-display");
