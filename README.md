@@ -103,7 +103,7 @@ https://www.youtube.com/watch?v=G6JTM-zt-dQ
 
 
 ## License
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
 Please refer to the MIT license in the repo. 
