@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
+
 import Auth from "../utils/auth";
 import ReactAudioPlayer from "react-audio-player";
 
@@ -11,6 +11,7 @@ const Singleplayer = () => {
     const [gameMode, setGameMode] = useState("singlePlayer");
 
     useEffect(() => {
+        const io = () => {}
         const winIcon = document.querySelector(".salute");
         const audio = document.getElementById("myaudio");
         audio.volume = 0.2;
