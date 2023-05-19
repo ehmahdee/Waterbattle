@@ -37,6 +37,8 @@ Ultimately, our goal to create a battleship-type game that users can easily acce
 
 ## Installation
 
+To run the app locally, run the command 'npm run install'.
+
 The following dependencies are installed for the client by running 'npm i':
 - apollo/client^3.5.8
 - testing-library/jest-dom^5.11.4
